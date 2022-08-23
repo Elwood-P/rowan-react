@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useRoutes } from 'react-router-dom';
 
 import Header from '@/components/UI/Header';
 import Footer from '@/components/UI/Footer';
@@ -6,19 +6,25 @@ import FrontPage from '@/components/Pages/FrontPage';
 import ShopPage from '@/components/Pages/ShopPage';
 import CartPage from '@/components/Pages/CartPage';
 import ProductPage from '@/components/Pages/ProductPage';
-import PageNotFound from "@/components/Pages/PageNotFound";
+import MarkdownPage from '@/components/Pages/MarkdownPage';
+import PageNotFound from '@/components/Pages/PageNotFound';
 
 const App = () => {
+  const routes = useRoutes([
+    { path: '/', element: <FrontPage /> },
+    { path: 'shop', element: <ShopPage /> },
+    { path: 'cart', element: <CartPage /> },
+    { path: 'product:productId', element: <ProductPage /> },
+    { path: 'about/our-story', element: <MarkdownPage /> },
+    { path: 'about/terms-of-service', element: <MarkdownPage /> },
+    { path: 'about/privacy-policy', element: <MarkdownPage /> },
+    { path: '*', element: <PageNotFound /> },
+  ]);
+
   return (
     <div className="App">
       <Header />
-      <Routes>
-        <Route exact path="/" element={<FrontPage />} />
-        <Route exact path="shop" element={<ShopPage />} />
-        <Route exact path="cart" element={<CartPage />} />
-        <Route path="product:productId" element={<ProductPage />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+        {routes}
       <Footer />
     </div>
   );
