@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 
-import Header from './components/UI/Header';
-import Footer from './components/UI/Footer';
-import FrontPage from './components/Pages/FrontPage';
-import ShopPage from './components/Pages/ShopPage';
-import CartPage from './components/Pages/CartPage';
+import Header from '@/components/UI/Header';
+import Footer from '@/components/UI/Footer';
+import FrontPage from '@/components/Pages/FrontPage';
+import ShopPage from '@/components/Pages/ShopPage';
+import CartPage from '@/components/Pages/CartPage';
 
 const App = () => {
   return (

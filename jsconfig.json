@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    // Absolute aliases for vite - https://divotion.com/blog/how-to-configure-import-aliases-in-vite-typescript-and-jest
+    "paths": {
+      "@/*": ["./src"]
+    }
+  },
+}
