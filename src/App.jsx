@@ -5,6 +5,8 @@ import Footer from '@/components/UI/Footer';
 import FrontPage from '@/components/Pages/FrontPage';
 import ShopPage from '@/components/Pages/ShopPage';
 import CartPage from '@/components/Pages/CartPage';
+import ProductPage from '@/components/Pages/ProductPage';
+import PageNotFound from "@/components/Pages/PageNotFound";
 
 const App = () => {
   return (
@@ -12,8 +14,10 @@ const App = () => {
       <Header />
       <Routes>
         <Route exact path="/" element={<FrontPage />} />
-        <Route exact path="/shop" element={<ShopPage />} />
-        <Route exact path="/cart" element={<CartPage />} />
+        <Route exact path="shop" element={<ShopPage />} />
+        <Route exact path="cart" element={<CartPage />} />
+        <Route path="product:productId" element={<ProductPage />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </div>
