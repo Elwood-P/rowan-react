@@ -1,4 +1,5 @@
-import seedrandom from 'seedrandom';
+import { Link } from "react-router-dom";
+
 import randomCornerClass from '@/utilities/randomCornerClass';
 
 const ProductItem = ({ id, name, imageUrl, price, onSale, salePrice }) => {
@@ -7,7 +8,7 @@ const ProductItem = ({ id, name, imageUrl, price, onSale, salePrice }) => {
 
   return (
     <li>
-      <a className="group | flex flex-col items-center | w-full" href={`/product/${id}`}>
+      <Link className="group | flex flex-col items-center | w-full" to={`/product/${id}`}>
         <img className={`rounded-${cornerClass}-[40px]`} width="311" height="400" src={imageUrl + imageOptions} />
         <div className="py-4 | text-100 font-medium uppercase text-center">
           <h2 className="leading-loose tracking-wide">{name}</h2>
@@ -19,7 +20,7 @@ const ProductItem = ({ id, name, imageUrl, price, onSale, salePrice }) => {
             {onSale && <span>£{salePrice.toFixed(2)}</span>}
           </p>
         </div>
-      </a>
+      </Link>
     </li>
   );
 };

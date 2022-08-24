@@ -18,7 +18,7 @@
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   safelist: [
-    // ROunded corner classes are generated dynamically
+    // Rounded corner classes are generated dynamically
     'rounded-tl-[40px]',
     'rounded-tr-[40px]',
     'rounded-bl-[40px]',
