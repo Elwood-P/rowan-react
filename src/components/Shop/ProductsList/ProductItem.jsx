@@ -1,13 +1,9 @@
 import seedrandom from 'seedrandom';
+import randomCornerClass from '@/utilities/randomCornerClass';
 
 const ProductItem = ({ id, name, imageUrl, price, onSale, salePrice }) => {
   const imageOptions = '?fit=min&w=311&h=400&auto=format&q=75';
-
-  // Random rounded corner generator - always generates same corner for given id
-  const rng = seedrandom(id);
-  const cornerClasses = ['tl', 'tr', 'br', 'bl'];
-  const cornerNum = Math.abs(rng.int32()) % 4;
-  const cornerClass = cornerClasses[cornerNum];
+  const cornerClass = randomCornerClass(id);
 
   return (
     <li>
