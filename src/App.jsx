@@ -14,7 +14,7 @@ const App = () => {
     { path: '/', element: <FrontPage /> },
     { path: 'shop', element: <ShopPage /> },
     { path: 'cart', element: <CartPage /> },
-    { path: 'product:productId', element: <ProductPage /> },
+    { path: 'product/:productId', element: <ProductPage /> },
     { path: 'about/our-story', element: <MarkdownPage /> },
     { path: 'about/terms-of-service', element: <MarkdownPage /> },
     { path: 'about/privacy-policy', element: <MarkdownPage /> },
@@ -22,7 +22,7 @@ const App = () => {
   ]);
 
   return (
-    <div className="App">
+    <div className="container mx-auto | flex flex-col gap-20 | py-12">
       <Header />
         {routes}
       <Footer />
