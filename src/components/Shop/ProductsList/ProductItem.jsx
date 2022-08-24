@@ -3,7 +3,7 @@ import randomCornerClass from '@/utilities/randomCornerClass';
 
 const ProductItem = ({ id, name, imageUrl, price, onSale, salePrice }) => {
   const imageOptions = '?fit=min&w=311&h=400&auto=format&q=75';
-  const cornerClass = randomCornerClass(id);
+  const cornerClass = randomCornerClass(id); 
 
   return (
     <li>
