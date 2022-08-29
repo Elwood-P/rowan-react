@@ -10,7 +10,7 @@ const DUMMY_PRODUCTS = [
     price: 90,
     onSale: true,
     salePrice: 70,
-    sizes: ['sm', 'md', 'lg', 'xl', '2xl'],
+    size: ['sm', 'md', 'lg', 'xl', '2xl'],
   },
   {
     id: 'pId-2',
@@ -23,7 +23,7 @@ const DUMMY_PRODUCTS = [
     price: 70,
     onSale: false,
     salePrice: null,
-    sizes: ['sm', 'md', 'lg', 'xl', '2xl'],
+    size: ['sm', 'md', 'lg', 'xl', '2xl'],
   },
   {
     id: 'pId-3',
@@ -36,7 +36,7 @@ const DUMMY_PRODUCTS = [
     price: 110,
     onSale: false,
     salePrice: null,
-    sizes: ['sm', 'md', 'lg', 'xl', '2xl'],
+    size: ['sm', 'md', 'lg', 'xl', '2xl'],
   },
 ];
 
