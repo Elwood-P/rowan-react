@@ -6,4 +6,3 @@ const FILTERS = [
 ];
 
 export default FILTERS;
-

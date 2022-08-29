@@ -1,12 +1,21 @@
 import FilterListItem from './FilterListItem';
 
-const TaxonomyFilterList = ({ taxonomy }) => {
+const TaxonomyFilterList = (props) => {
+  const onFilterChange = (updatedFilterIndex, updatedIsChecked) => {
+    props.onFilterChange(props.taxonomyIndex, updatedFilterIndex, updatedIsChecked);
+  };
+
   return (
     <li>
-      <h3 className="mb-2 | text-100 font-semibold">{taxonomy.taxonomy}</h3>
+      <h3 className="mb-2 | text-100 font-semibold">{props.taxonomyFilterList.taxonomy}</h3>
       <menu>
-        {taxonomy.filters.map((filter, index) => (
-          <FilterListItem key={`filterMenuFilter-${filter}-${index}`} filter={filter} />
+        {props.taxonomyFilterList.filters.map((filterListItem, index) => (
+          <FilterListItem
+            key={filterListItem.filter}
+            filterListItem={filterListItem}
+            filterIndex={index}
+            onFilterChange={onFilterChange}
+          />
         ))}
       </menu>
     </li>
