@@ -32,13 +32,13 @@ const FilterMenu = (props) => {
 
     const filteredProducts = props.allProducts.filter((product) => {
       let includeProduct = true;
-      checkedFilters.forEach((filter) => {
+      checkedFilters.forEach((checkedFilter) => {
         // Special case for array e.g. sizes
-        if (Array.isArray(product[filter.taxonomy])) {
-          if (!product[filter.taxonomy].find((element) => element === filter.filter)) {
+        if (Array.isArray(product[checkedFilter.taxonomy])) {
+          if (!product[checkedFilter.taxonomy].find((productFilter) => productFilter === checkedFilter.filter)) {
             includeProduct = false;
           }
-        } else if (product[filter.taxonomy] !== filter.filter) {
+        } else if (product[checkedFilter.taxonomy] !== checkedFilter.filter) {
           includeProduct = false;
         }
       });
