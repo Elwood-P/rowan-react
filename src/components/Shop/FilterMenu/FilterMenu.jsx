@@ -30,22 +30,20 @@ const FilterMenu = (props) => {
       return buildCheckedFilters;
     }, []);
 
-    // TODO: Why have I used reduce method? More intuative to use filter.
-    const filteredProducts = props.allProducts.reduce((buildFilteredProducts, currentProduct) => {
+    const filteredProducts = props.allProducts.filter((product) => {
       let includeProduct = true;
       checkedFilters.forEach((filter) => {
         // Special case for array e.g. sizes
-        if (Array.isArray(currentProduct[filter.taxonomy])) {
-          if (!currentProduct[filter.taxonomy].find((element) => element === filter.filter)) {
+        if (Array.isArray(product[filter.taxonomy])) {
+          if (!product[filter.taxonomy].find((element) => element === filter.filter)) {
             includeProduct = false;
           }
-        } else if (currentProduct[filter.taxonomy] !== filter.filter) {
+        } else if (product[filter.taxonomy] !== filter.filter) {
           includeProduct = false;
         }
       });
-      if (includeProduct) buildFilteredProducts.push(currentProduct);
-      return buildFilteredProducts;
-    }, []);
+      return includeProduct;
+    });
 
     props.onFilterChange(filteredProducts);
   }, [filters]);
