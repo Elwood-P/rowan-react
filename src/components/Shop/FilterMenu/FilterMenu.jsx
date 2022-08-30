@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { cloneDeep } from 'lodash';
+import { useState, useEffect } from 'react';
+import { cloneDeep, filter } from 'lodash';
 
 import TaxonomyFilterList from './TaxonomyFilterList';
 import FILTERS_DATA from '@/data/filters';
 
-const FilterMenu = ({ products }) => {
+const FilterMenu = (props) => {
   const [filters, setFilters] = useState(
     FILTERS_DATA.map((taxonomy) => {
       const transformedFilters = taxonomy.filters.map((filter) => {
@@ -21,6 +21,34 @@ const FilterMenu = ({ products }) => {
       return updatedFilters;
     });
   };
+
+  useEffect(() => {
+    const checkedFilters = filters.reduce((buildCheckedFilters, currentTaxonomy) => {
+      currentTaxonomy.filters.forEach((filter) => {
+        if (filter.isChecked) buildCheckedFilters.push({ taxonomy: currentTaxonomy.taxonomy, filter: filter.filter });
+      });
+      return buildCheckedFilters;
+    }, []);
+
+    // TODO: Why have I used reduce method? More intuative to use filter.
+    const filteredProducts = props.allProducts.reduce((buildFilteredProducts, currentProduct) => {
+      let includeProduct = true;
+      checkedFilters.forEach((filter) => {
+        // Special case for array e.g. sizes
+        if (Array.isArray(currentProduct[filter.taxonomy])) {
+          if (!currentProduct[filter.taxonomy].find((element) => element === filter.filter)) {
+            includeProduct = false;
+          }
+        } else if (currentProduct[filter.taxonomy] !== filter.filter) {
+          includeProduct = false;
+        }
+      });
+      if (includeProduct) buildFilteredProducts.push(currentProduct);
+      return buildFilteredProducts;
+    }, []);
+
+    props.onFilterChange(filteredProducts);
+  }, [filters]);
 
   return (
     <menu className="flex space-x-12 my-10 text-50 font-normal uppercase tracking-wide leading-loose">

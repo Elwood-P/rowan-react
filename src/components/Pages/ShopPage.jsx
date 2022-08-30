@@ -9,10 +9,14 @@ const ShopPage = () => {
   const allProducts = useSelector((state) => state.products);
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
 
+  const onFilterChange = (updatedFilteredProducts) => {
+    setFilteredProducts(updatedFilteredProducts);
+  };
+
   return (
     <div className="flex flex-col gap-8">
       <h1>Shop Page</h1>
-      <FilterMenu products={filteredProducts} />
+      <FilterMenu allProducts={allProducts} onFilterChange={onFilterChange} />
       <ProductList products={filteredProducts} />
     </div>
   );

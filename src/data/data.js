@@ -5,12 +5,12 @@ const DUMMY_PRODUCTS = [
     description:
       'Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum.',
     imageUrl: 'https://kimba.imgix.net/wp-content/uploads/2021/08/jumper-zigzag.jpg',
-    category: 'knitwear',
+    category: 'tops & t-shirts',
     material: 'ethically sourced wool',
     price: 90,
     onSale: true,
     salePrice: 70,
-    size: ['sm', 'md', 'lg', 'xl', '2xl'],
+    size: ['2xl'],
   },
   {
     id: 'pId-2',
