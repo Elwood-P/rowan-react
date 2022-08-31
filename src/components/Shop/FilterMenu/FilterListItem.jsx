@@ -24,7 +24,7 @@ const FilterListItem = (props) => {
         checked={props.filterListItem.isChecked}
         onChange={onChangeHandler}
       />
-      <label htmlFor={`filter-${props.filterListItem.filterName}`} className={isDisabled && `opacity-50`}>
+      <label htmlFor={`filter-${props.filterListItem.filterName}`} className={isDisabled ? 'opacity-50' : ''}>
         {props.filterListItem.filterName}
       </label>
     </li>
