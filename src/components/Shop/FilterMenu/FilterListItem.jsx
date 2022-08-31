@@ -4,12 +4,12 @@ const FilterListItem = (props) => {
   };
 
   const disabledCheck = () => {
-    const isRelevantProduct = props.filteredProducts.find((product) => {
+    const filterHasProducts = props.filteredProducts.find((product) => {
       if (Array.isArray(product[props.taxonomy])) {
         return product[props.taxonomy].find((productFilter) => productFilter === props.filterListItem.filterName);
       } else return product[props.taxonomy] === props.filterListItem.filterName;
     });
-    return !isRelevantProduct;
+    return !filterHasProducts;
   };
 
   const isDisabled = disabledCheck();
