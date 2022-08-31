@@ -1,5 +1,8 @@
+// TODO: Implement sorting dropdown
+// TODO: Control filter state with routes instead of useState
+
 import { useState, useEffect } from 'react';
-import { cloneDeep, filter } from 'lodash';
+import { cloneDeep } from 'lodash';
 
 import TaxonomyFilterList from './TaxonomyFilterList';
 import FILTERS_DATA from '@/data/filters';

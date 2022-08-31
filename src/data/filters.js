@@ -1,3 +1,5 @@
+// TODO: Add taxonomyName / TaxonomyID, filterName/filterID etc...
+
 const FILTERS = [
   { taxonomy: 'category', filters: ['knitwear', 'tops & t-shirts', 'dresses', 'trousers & jeans'] },
   { taxonomy: 'material', filters: ['ethically sourced wool', 'organic cotton', 'organic denim'] },
@@ -6,5 +8,3 @@ const FILTERS = [
 ];
 
 export default FILTERS;
-
-// TODO: Add taxonomyName / TaxonomyID, filterName/filterID etc...
