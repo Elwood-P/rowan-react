@@ -6,11 +6,11 @@ import FILTERS_DATA from '@/data/filters';
 
 const FilterMenu = (props) => {
   const [filters, setFilters] = useState(
-    FILTERS_DATA.map((taxonomy) => {
-      const transformedFilters = taxonomy.filters.map((filter) => {
-        return { filter: filter, isChecked: false };
+    FILTERS_DATA.map((taxonomyFilterList) => {
+      const transformedFilters = taxonomyFilterList.filters.map((filter) => {
+        return { filterName: filter, isChecked: false };
       });
-      return { taxonomy: taxonomy.taxonomy, filters: transformedFilters };
+      return { taxonomy: taxonomyFilterList.taxonomy, filters: transformedFilters };
     })
   );
 
@@ -25,7 +25,7 @@ const FilterMenu = (props) => {
   useEffect(() => {
     const checkedFilters = filters.reduce((buildCheckedFilters, currentTaxonomy) => {
       currentTaxonomy.filters.forEach((filter) => {
-        if (filter.isChecked) buildCheckedFilters.push({ taxonomy: currentTaxonomy.taxonomy, filter: filter.filter });
+        if (filter.isChecked) buildCheckedFilters.push({ taxonomy: currentTaxonomy.taxonomy, filter: filter.filterName });
       });
       return buildCheckedFilters;
     }, []);
@@ -53,6 +53,7 @@ const FilterMenu = (props) => {
       {filters.map((taxonomyFilterList, index) => (
         <TaxonomyFilterList
           key={taxonomyFilterList.taxonomy}
+          filteredProducts={props.filteredProducts}
           taxonomyFilterList={taxonomyFilterList}
           taxonomyIndex={index}
           onFilterChange={onFilterChange}

@@ -16,7 +16,7 @@ const ShopPage = () => {
   return (
     <div className="flex flex-col gap-8">
       <h1>Shop Page</h1>
-      <FilterMenu allProducts={allProducts} onFilterChange={onFilterChange} />
+      <FilterMenu allProducts={allProducts} filteredProducts={filteredProducts} onFilterChange={onFilterChange} />
       <ProductList products={filteredProducts} />
     </div>
   );

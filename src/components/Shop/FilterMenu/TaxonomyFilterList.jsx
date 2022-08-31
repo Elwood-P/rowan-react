@@ -11,9 +11,11 @@ const TaxonomyFilterList = (props) => {
       <menu>
         {props.taxonomyFilterList.filters.map((filterListItem, index) => (
           <FilterListItem
-            key={filterListItem.filter}
+            key={filterListItem.filterName}
+            filteredProducts={props.filteredProducts}
             filterListItem={filterListItem}
             filterIndex={index}
+            taxonomy={props.taxonomyFilterList.taxonomy}
             onFilterChange={onFilterChange}
           />
         ))}
