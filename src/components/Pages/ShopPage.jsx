@@ -14,8 +14,10 @@ const ShopPage = () => {
   };
 
   return (
-    <div className="flex flex-col gap-8">
-      <h1>Shop Page</h1>
+    <div className="container-fluid | flex flex-col gap-8">
+      <header class="flex flex-col items-center space-y-6 | my-32">
+        <h1 className="font-serif font-normal text-800">Shop</h1>
+      </header>
       <FilterMenu allProducts={allProducts} filteredProducts={filteredProducts} onFilterChange={onFilterChange} />
       <ProductList products={filteredProducts} />
     </div>

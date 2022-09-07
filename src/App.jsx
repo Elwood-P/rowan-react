@@ -22,11 +22,11 @@ const App = () => {
   ]);
 
   return (
-    <div className="container mx-auto | flex flex-col gap-20 | py-12">
+    <>
       <Header />
-        {routes}
+      {routes}
       <Footer />
-    </div>
+    </>
   );
 };
 
