@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.text-fl-400 {
+  @include fluid-property(font-size, toRem(16px), toRem(30px));
+}
+
+.my-fl-400 {
+  @include fluid-property(margin-block, toRem(3px), toRem(120px));
+}

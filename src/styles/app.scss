@@ -1,9 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* 
- * Import theme styles 
- */
- @import 'common/global';
- @import 'common/layout';
+@use 'tailwind/init-tailwind';
+@use 'common/global';
+@use 'common/layout';
+@use 'common/fluid-utilities';
