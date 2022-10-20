@@ -1,2 +1,5 @@
+// NB Can't use theme('screens.xs') with SASS https://tailwindcss.com/docs/using-with-preprocessors#using-sass-less-or-stylus
+// Todo: Change to PostCSS?
+
 $min-vw: 400px;
 $max-vw: 1400px;
