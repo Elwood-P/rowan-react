@@ -6,6 +6,7 @@ import { cloneDeep } from 'lodash';
 import FilterMenu from '@/components/Shop/FilterMenu/FilterMenu';
 import SortDropdown from '@/components/Shop/SortDropdown/SortDropdown';
 import ProductList from '@/components/Shop/ProductsList/ProductList';
+import Breadcrumb from '@/components/UI/Breadcrumb';
 
 const ShopPage = () => {
   const allProducts = useSelector((state) => state.products);
@@ -44,6 +45,7 @@ const ShopPage = () => {
       <header className="flex flex-col items-center space-y-6 | my-fl-400">
         <h1 className="font-serif font-normal text-800">Shop</h1>
       </header>
+      <Breadcrumb />
       <SortDropdown allProducts={allProducts} sortOption={sortOption} onSortChange={updateSortOption} />
       <FilterMenu allProducts={allProducts} filteredProducts={filteredProducts} onFilterChange={updateFilteredProducts} />
       <ProductList products={sortedProducts} />

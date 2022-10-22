@@ -5,15 +5,15 @@ const SingleProductForm = () => {
       <fieldset>
         <legend>Size</legend>
         <input type="radio" name="size" id="sm" value="sm" defaultChecked={true} />
-        <label for="sm">SM</label>
+        <label htmlFor="sm">SM</label>
         <input type="radio" name="size" id="md" value="md" />
-        <label for="md">MD</label>
+        <label htmlFor="md">MD</label>
         <input type="radio" name="size" id="lg" value="lg" />
-        <label for="lg">LG</label>
+        <label htmlFor="lg">LG</label>
         <input type="radio" name="size" id="xl" value="xl" />
-        <label for="xl">XL</label>
+        <label htmlFor="xl">XL</label>
         <input type="radio" name="size" id="2xl" value="2xl" />
-        <label for="2xl">2XL</label>
+        <label htmlFor="2xl">2XL</label>
       </fieldset>
 
       <div>
