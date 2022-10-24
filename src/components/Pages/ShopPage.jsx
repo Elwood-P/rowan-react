@@ -13,6 +13,10 @@ const ShopPage = () => {
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [sortOption, setSortOption] = useState('default');
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  console.log(searchParams);
+
   const updateFilteredProducts = (updatedFilteredProducts) => {
     setFilteredProducts(updatedFilteredProducts);
   };
@@ -25,7 +29,6 @@ const ShopPage = () => {
   // TODO: theres probarbly a better way to organise this? - move filter and sort logic into custom hooks
   const sortedProducts = cloneDeep(filteredProducts);
   const sortProducts = () => {
-    console.log(sortOption);
     if (sortOption !== 'default') {
       sortedProducts.sort((a, b) => {
         switch (sortOption) {

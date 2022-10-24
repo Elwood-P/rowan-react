@@ -1,4 +1,3 @@
-// TODO: Implement sorting dropdown
 // TODO: Control filter state with routes instead of useState
 
 import { useState, useEffect } from 'react';
