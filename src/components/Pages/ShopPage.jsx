@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
 import { cloneDeep } from 'lodash';
 
 import FilterMenu from '@/components/Shop/FilterMenu/FilterMenu';
@@ -12,10 +11,6 @@ const ShopPage = () => {
   const allProducts = useSelector((state) => state.products);
   const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [sortOption, setSortOption] = useState('default');
-
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  console.log(searchParams);
 
   const updateFilteredProducts = (updatedFilteredProducts) => {
     setFilteredProducts(updatedFilteredProducts);
