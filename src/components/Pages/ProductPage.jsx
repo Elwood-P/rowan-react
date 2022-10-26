@@ -27,7 +27,7 @@ const ProductPage = () => {
         <div>{description}</div>
         <p className="text-700 font-semibold">£{price}</p>
 
-        <SingleProductForm /> 
+        <SingleProductForm product={product} />
       </div>
     </div>
   );
