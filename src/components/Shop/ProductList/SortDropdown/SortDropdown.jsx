@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 
-const SortDropdown = (props) => {
-
+const SortDropdown = ({ onSortChange, sortParams }) => {
   const onChangeHandler = (e) => {
-    props.onSortChange(e.target.value);
+    onSortChange(e.target.value);
   };
 
   return (
     <div>
-      <select value={props.sortOption} onChange={onChangeHandler}>
+      <select value={sortParams.order} onChange={onChangeHandler}>
         <option value="default">Default Sorting</option>
         <option value="priceAsc">Sort By Price: Low to High</option>
         <option value="priceDesc">Sort By Price: High to Low</option>

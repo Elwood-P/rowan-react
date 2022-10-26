@@ -1,4 +1,4 @@
-const DUMMY_PRODUCTS = [
+const PRODUCTS = [
   {
     id: 'pId-1',
     name: 'Aztec Autumn Wool Jumper',
@@ -40,4 +40,4 @@ const DUMMY_PRODUCTS = [
   },
 ];
 
-export default DUMMY_PRODUCTS;
+export default PRODUCTS;

@@ -1,10 +1,13 @@
-// TODO: Add taxonomyName / TaxonomyID, filterName/filterID etc...
-
-const FILTERS = [
-  { taxonomy: 'category', filters: ['knitwear', 'tops & t-shirts', 'dresses', 'trousers & jeans'] },
-  { taxonomy: 'material', filters: ['ethically sourced wool', 'organic cotton', 'organic denim'] },
-  { taxonomy: 'size', filters: ['sm', 'md', 'lg', 'xl', '2xl'] },
-  { taxonomy: 'sale', filters: ['on sale'] },
+export const filters = [
+  { filterCat: 'category', filters: ['knitwear', 'tops & t-shirts', 'dresses', 'trousers & jeans'] },
+  { filterCat: 'material', filters: ['ethically sourced wool', 'organic cotton', 'organic denim'] },
+  { filterCat: 'size', filters: ['sm', 'md', 'lg', 'xl', '2xl'] },
+  { filterCat: 'sale', filters: ['on sale'] },
 ];
 
-export default FILTERS;
+export const filterParamDefaults = {
+  category: { default: [], multiple: true },
+  material: { default: [], multiple: true },
+  size: { default: [], multiple: true },
+  sale: { default: [], multiple: true },
+};

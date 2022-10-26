@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import DUMMY_PRODUCTS from '@/data/data';
+import PRODUCTS from '@/data/products';
 
 const productsSlice = createSlice({
   name: 'products',
-  initialState: DUMMY_PRODUCTS,
+  initialState: PRODUCTS,
 });
 
 // export const productsActions = productsSlice.actions;
