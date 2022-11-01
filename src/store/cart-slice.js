@@ -5,7 +5,7 @@ const cartSlice = createSlice({
   initialState: {
     items: [
       {
-        id: 'pId-2',
+        id: 'felted-wool-jumper',
         name: 'Felted Wool Jumper',
         description:
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor.',
@@ -30,7 +30,9 @@ const cartSlice = createSlice({
         return {
           ...state,
           items: cartItems.map((cartItem) =>
-            cartItem.id === cartItemToAdd.id ? { ...cartItem, qty: cartItem.qty + cartItemToAdd.qty } : cartItem
+            cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToUpdate.size
+              ? { ...cartItem, qty: cartItem.qty + cartItemToAdd.qty }
+              : cartItem
           ),
         };
       }
@@ -41,18 +43,25 @@ const cartSlice = createSlice({
     updateItemQty: (state, action) => {
       const cartItems = state.items;
       const cartItemToUpdate = action.payload;
-      const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToUpdate.id && cartItem.size === cartItemToUpdate.size);
+      // const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToUpdate.id && cartItem.size === cartItemToUpdate.size);
 
       return {
         ...state,
-        items: cartItems.map((cartItem) => (cartItem.id === cartItemToUpdate.id ? { ...cartItem, qty: cartItemToUpdate.qty } : cartItem)),
+        items: cartItems.map((cartItem) =>
+          cartItem.id === cartItemToUpdate.id && cartItem.size === cartItemToUpdate.size
+            ? { ...cartItem, qty: cartItemToUpdate.qty }
+            : cartItem
+        ),
       };
     },
 
     removeItem: (state, action) => {
+      const cartItems = state.items;
+      const cartItemToRemove = action.payload;
+
       return {
         ...state,
-        items: state.items.filter((cartItem) => cartItem.id !== action.payload.id),
+        items: cartItems.filter((cartItem) => !(cartItem.id === cartItemToRemove.id && cartItem.size === cartItemToRemove.size)),
       };
     },
   },
