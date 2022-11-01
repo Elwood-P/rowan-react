@@ -33,18 +33,17 @@ const SingleProductForm = ({ product }) => {
         <legend>Size</legend>
         {['sm', 'md', 'lg', 'xl', '2xl'].map((size) => {
           return (
-            <>
+            <span key={size}>
               <input
                 type="radio"
                 name="size"
-                key={size}
                 id={size}
                 value={size}
                 onChange={sizeInputChangeHandler}
                 checked={optionSize === size}
               />
               <label htmlFor={size}>{size}</label>
-            </>
+            </span>
           );
         })}
       </fieldset>

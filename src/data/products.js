@@ -1,6 +1,6 @@
 const PRODUCTS = [
   {
-    id: 'pId-1',
+    id: 'aztec-autumn-wool-jumper',
     name: 'Aztec Autumn Wool Jumper',
     description:
       'Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum.',
@@ -13,7 +13,7 @@ const PRODUCTS = [
     size: ['2xl'],
   },
   {
-    id: 'pId-2',
+    id: 'felted-wool-jumper',
     name: 'Felted Wool Jumper',
     description:
       'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor.',
@@ -26,8 +26,8 @@ const PRODUCTS = [
     size: ['sm', 'md', 'lg', 'xl', '2xl'],
   },
   {
-    id: 'pId-3',
-    name: 'Forest Green Sherpa Fleece',
+    id: 'forest-sherpa-fleece',
+    name: 'Forest Sherpa Fleece',
     description:
       'Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.',
     imageUrl: 'https://kimba.imgix.net/wp-content/uploads/2021/09/jumper-forest.jpg',

@@ -18,8 +18,8 @@ const Cart = () => {
         <p>Order Total</p>
         <p>{totalPrice}</p>
       </div>
-      <div class="flex justify-center w-full">
-        <button class="checkout-button button alt wc-forward">Proceed to checkout</button>
+      <div className="flex justify-center w-full">
+        <button className="checkout-button button alt wc-forward">Proceed to checkout</button>
       </div>
     </>
   );
