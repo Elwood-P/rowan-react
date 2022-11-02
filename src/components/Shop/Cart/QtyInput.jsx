@@ -1,4 +1,4 @@
-function QtyInput({ qty, onQtyInputChange, onQtyButtonClick }) {
+const QtyInput = ({ qty, onQtyInputChange, onQtyButtonClick }) => {
   return (
     <div className="relative | flex | w-full h-full">
       <button
@@ -26,6 +26,6 @@ function QtyInput({ qty, onQtyInputChange, onQtyButtonClick }) {
       </button>
     </div>
   );
-}
+};
 
 export default QtyInput;

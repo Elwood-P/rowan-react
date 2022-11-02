@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function HeaderNavMenu({ menu }) {
+const HeaderNavMenu = ({ menu }) => {
   return (
     <li className="active menu-item menu-item-has-children menu-shop">
       <h3>{menu.title}</h3>
@@ -15,6 +15,6 @@ function HeaderNavMenu({ menu }) {
       </menu>
     </li>
   );
-}
+};
 
 export default HeaderNavMenu;

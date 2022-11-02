@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { ReactComponent as ArrowIcon } from '@/assets/images/icons/arrow-icon.svg';
 
-function HeaderNavSale() {
+const HeaderNavSale = () => {
   return (
     <Link to="/shop?sale=on+sale">
       <figure className="group | max-w-[160px] | flex flex-col items-end space-y-3">
@@ -23,6 +23,6 @@ function HeaderNavSale() {
       </figure>
     </Link>
   );
-}
+};
 
 export default HeaderNavSale;
