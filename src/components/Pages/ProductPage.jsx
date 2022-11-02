@@ -23,11 +23,9 @@ const ProductPage = () => {
 
         <div className="col-start-8 col-span-5 | flex flex-col space-y-9">
           <Breadcrumb />
-
           <h1 className="hidden sm:block | font-serif font-normal text-800">{name}</h1>
           <div>{description}</div>
           <p className="text-700 font-semibold">£{price}</p>
-
           <SingleProductForm product={product} />
         </div>
       </div>
