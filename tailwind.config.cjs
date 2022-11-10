@@ -29,6 +29,7 @@
        primary: '#F9AA7D',
        white: '#fff',
        black: '#454342',
+       blueblack: '#3C4557',
        cream: '#F6F1EB',
        gray: colors.gray,
        transparent: 'transparent',
@@ -56,6 +57,7 @@
       '600': ['1.1875rem', '1.4'],     // 19px - 600
       '650': ['1.25rem', '1.4'],       // 20px - 650
       '700': ['1.375rem', '1.4'],      // 22px - 700
+      '750': ['2rem', '1.2'],      // 32px - 750
       '800': ['2.625rem', '1.1'],      // 42px - 800
       '900': ['5.25rem', '5.5rem'],    // 84px - 900
      },

@@ -9,7 +9,7 @@ import { ReactComponent as MenuIcon } from '@/assets/images/icons/menu-icon.svg'
 import { ReactComponent as CloseIcon } from '@/assets/images/icons/close-icon.svg';
 import HeaderNav from './HeaderNav/HeaderNav';
 
-const Header = () => {
+const Header = ({ onCartButtonClick }) => {
   const [menuDisplay, setMenuDisplay] = useState(false);
   const cart = useSelector((state) => state.cart);
   const location = useLocation();
@@ -32,10 +32,10 @@ const Header = () => {
             <img src={logo} alt="Rowan Logo" />
           </Link>
           <div className="flex items-center justify-end">
-            <Link to="/basket" className="nav-basket-item / flex items-center mr-4 space-x-1">
+            <button className="nav-basket-item / flex items-center mr-4 space-x-1" onClick={onCartButtonClick}>
               {cartCount ? <CartCount cartCount={cartCount} /> : ''}
               <BasketIcon />
-            </Link>
+            </button>
             <button onClick={menuButtonHandler}>{menuDisplay ? <CloseIcon /> : <MenuIcon />}</button>
           </div>
         </div>
