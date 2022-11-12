@@ -3,14 +3,13 @@ import { removeItem } from '@/store/cart-slice';
 import { ReactComponent as CloseIcon } from '@/assets/images/icons/close-icon.svg';
 import { Link } from 'react-router-dom';
 
-const CartItem = ({ id, name, imageUrl, price, sale, salePrice, size, qty, closeMiniCart }) => {
+const CartItem = (cartItem) => {
+  const { id, name, imageUrl, price, sale, salePrice, size, qty, closeMiniCart } = cartItem;
   const dispatch = useDispatch();
 
   const removeButtonHandler = () => {
     dispatch(removeItem(cartItem));
   };
-
-  console.log(closeMiniCart);
 
   return (
     <div className="flex | justify-between | w-full py-8 | border-t border-black border-opacity-10 | text-200 font-semibold uppercase tracking-wide">
