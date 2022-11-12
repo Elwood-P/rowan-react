@@ -1,6 +1,5 @@
 import { useRoutes } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { openMiniCart, closeMiniCart } from '@/store/cart-slice';
+import { useSelector } from 'react-redux';
 
 import Header from '@/components/Header/Header';
 import MiniCart from '@/components/Shop/Cart/MiniCart';
@@ -27,7 +26,6 @@ const App = () => {
       {isMiniCartOpen && <MiniCart />}
       {routes}
       <Footer />
-      <Notifications />
     </>
   );
 };
