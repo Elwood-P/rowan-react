@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
+    isMiniCartOpen: false,
     items: [
       {
         id: 'aztec-autumn-wool-jumper',
@@ -35,23 +36,32 @@ const cartSlice = createSlice({
     ],
   },
   reducers: {
+    closeMiniCart: (state) => {
+      state.isMiniCartOpen = false;
+    },
+    openMiniCart: (state) => {
+      state.isMiniCartOpen = true;
+    },
+
     addItem: (state, action) => {
       const cartItems = state.items;
       const cartItemToAdd = action.payload;
       const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size);
+      // toast(`${cartItemToAdd.qty} x "${cartItemToAdd.name} - ${cartItemToAdd.size}" has been added to your basket.`, { type: 'success' });
 
       if (existingCartItem) {
         return {
           ...state,
+          isMiniCartOpen: true,
           items: cartItems.map((cartItem) =>
-            cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToUpdate.size
+            cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size
               ? { ...cartItem, qty: cartItem.qty + cartItemToAdd.qty }
               : cartItem
           ),
         };
       }
 
-      return { ...state, items: [...cartItems, { ...cartItemToAdd }] };
+      return { ...state, isMiniCartOpen: true, items: [...cartItems, { ...cartItemToAdd }] };
     },
 
     updateItemQty: (state, action) => {
@@ -80,6 +90,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, updateItemQty, removeItem } = cartSlice.actions;
+export const { addItem, updateItemQty, removeItem, openMiniCart, closeMiniCart } = cartSlice.actions;
 
 export default cartSlice;
