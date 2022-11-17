@@ -3,7 +3,7 @@ import { ReactComponent as ArrowIcon } from '@/assets/images/icons/arrow-icon.sv
 
 const Notifications = () => {
   const toastOptions = {
-    position: 'bottom-right',
+    position: 'top-right',
     duration: 4000,
     style: { animation: '' }, // TODO: Animation
   };
