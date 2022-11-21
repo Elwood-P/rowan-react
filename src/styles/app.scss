@@ -1,6 +1,9 @@
 
 @use 'tailwind/init-tailwind';
+
 @use 'common/global';
 @use 'common/layout';
 @use 'common/fluid-utilities';
 @use 'common/custom-grids';
+
+@import 'components/buttons';

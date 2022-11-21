@@ -50,7 +50,7 @@ const SingleProductForm = ({ product }) => {
 
       <div>
         <QtyInput qty={qty} onQtyInputChange={qtyInputChangeHandler} onQtyButtonClick={qtyButtonHandler} />
-        <button type="submit">Add to basket</button>
+        <button className="btn" type="submit">Add to basket</button>
       </div>
     </form>
   );

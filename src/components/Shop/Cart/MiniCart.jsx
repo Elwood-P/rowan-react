@@ -26,7 +26,7 @@ const MiniCart = () => {
     <>
       <Overlay onOverlayClick={closeMiniCartHandler} />
       <div
-        className={`fixed top-0 right-0 w-[510px] h-full | flex flex-col | p-9 | bg-cream  bg-opacity-95 | border-l border-black border-opacity-25 | z-50 overflow-auto | transition-all ease-out duration-300 ${translate}`}
+        className={`fixed top-0 right-0 w-[510px] h-full | flex flex-col gap-8 | p-9 | bg-cream  bg-opacity-95 | border-l border-black border-opacity-25 | z-50 overflow-auto | transition-all ease-out duration-300 ${translate}`}
         style={{ backdropFilter: 'blur(3px)' }}
       >
         <header className="flex justify-between items-start">
@@ -42,11 +42,11 @@ const MiniCart = () => {
           })}
         </div>
 
-        <div>
-          <Link to="/basket" onClick={closeMiniCartHandler}>
+        <div className="grid grid-cols-2 gap-4">
+          <Link className="btn" to="/basket" onClick={closeMiniCartHandler}>
             View Basket
           </Link>
-          <button>Checkout</button>
+          <button className="btn">Checkout</button>
         </div>
       </div>
     </>

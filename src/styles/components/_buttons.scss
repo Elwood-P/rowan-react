@@ -1,0 +1,35 @@
+*:focus {
+  outline-offset: 2px;
+}
+
+.btn, .button { // .button for woo-commerce
+  
+  // Default
+  @apply  
+    inline-grid grid-flow-col gap-x-2 justify-center items-center
+    min-h-[2.75rem]
+    py-3 px-5 border border-black
+    bg-black hover:bg-cream
+    font-semibold text-cream hover:text-black text-center text-200 leading-[1rem] uppercase tracking-wide;      
+
+  // Inverse
+  &.btn-secondary {
+    @apply  
+      text-black hover:text-cream
+      bg-cream hover:bg-black;
+  }
+
+  // no border
+  &.btn-noborder {
+    @apply  min-h-0 
+            p-0
+            text-black
+            border-0 bg-cream;
+  }
+
+  &:focus {
+    outline: 1px solid theme('colors.black');
+    outline-offset: 2px;
+  }
+  
+}
