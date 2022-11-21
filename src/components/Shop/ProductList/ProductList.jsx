@@ -7,6 +7,9 @@ import FilterMenu from '@/components/Shop/ProductList/FilterMenu/FilterMenu';
 import SortDropdown from '@/components/Shop/ProductList/SortDropdown/SortDropdown';
 import ProductGrid from './ProductGrid';
 
+import { ReactComponent as FilterIcon } from '@/assets/images/icons/filter-icon.svg';
+import { ReactComponent as FilterOffIcon } from '@/assets/images/icons/filter-off-icon.svg';
+
 import { filters, filterParamDefaults } from '@/data/filters';
 import { filterProducts, sortProducts } from './helpers';
 
@@ -40,16 +43,24 @@ const ProductList = ({ products }) => {
 
   return (
     <>
-      <div className="flex | justify-between">
-        <div className="flex | gap-8">
-          <button onClick={filterButtonHandler}>Filter</button>
-          <SortDropdown onSortChange={onSortChange} sortParams={sortParams} />
+      <div className="flex flex-col gap-3">
+        <div className="flex | justify-between">
+          <div className="flex | gap-8">
+            <button
+              className="flex items-center | gap-2 | text-100 font-normal uppercase tracking-wide leading-none"
+              onClick={filterButtonHandler}
+            >
+              {isFilterMenuOpen ? <FilterOffIcon className="w-[18px]" /> : <FilterIcon className="w-[18px]" />}
+              Filter
+            </button>
+            <SortDropdown onSortChange={onSortChange} sortParams={sortParams} />
+          </div>
+          <div>{filteredProductCount} products found</div>
         </div>
-        <div>{filteredProductCount} products found</div>
+        {isFilterMenuOpen && (
+          <FilterMenu filteredProducts={filteredProducts} filters={filters} filterParams={filterParams} onFilterChange={onFilterChange} />
+        )}
       </div>
-      {isFilterMenuOpen && (
-        <FilterMenu filteredProducts={filteredProducts} filters={filters} filterParams={filterParams} onFilterChange={onFilterChange} />
-      )}
       <ProductGrid products={sortedFilteredProducts} />
     </>
   );

@@ -17,9 +17,16 @@ const Filter = ({ filteredProducts, filterParams, filter, filterCat, onFilterCha
   const isDisabled = disabledCheck();
 
   return (
-    <li>
-      <input type="checkbox" disabled={isDisabled} id={`filter-${filter}`} name={`filter-${filter}`} onChange={inputChangeHandler} checked={checked} />
-      <label htmlFor={`filter-${filter}`}>{filter}</label>
+    <li className="flex">
+      <input
+        type="checkbox"
+        disabled={isDisabled}
+        id={`filter-${filter}`}
+        name={`filter-${filter}`}
+        onChange={inputChangeHandler}
+        checked={checked}
+      />
+      <label className="pl-2" htmlFor={`filter-${filter}`}>{filter}</label>
     </li>
   );
 };

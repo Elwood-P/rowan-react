@@ -5,7 +5,7 @@ import { headerNavMenus } from '@/data/navs';
 
 const HeaderNav = () => {
   return (
-    <nav className="relative |">
+    <nav className="relative">
       <div
         className="absolute | w-full | py-14 | border-t border-b border-black border-opacity-25 | bg-cream bg-opacity-95 | z-40"
         style={{ backdropFilter: 'blur(3px)' }}

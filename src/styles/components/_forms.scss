@@ -1,0 +1,41 @@
+// Drop downs
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath fill='%454342' d='M128 184a8.5 8.5 0 0 1-5.7-2.3l-80-80a8.1 8.1 0 0 1 11.4-11.4l74.3 74.4l74.3-74.4a8.1 8.1 0 0 1 11.4 11.4l-80 80a8.5 8.5 0 0 1-5.7 2.3Z'/%3E%3C/svg%3E");
+  background-size: 17px;
+  background-repeat: no-repeat;
+  background-position: left 0.5rem center;
+  padding-inline: 1.75rem 0.75rem;
+  cursor: pointer;
+}
+
+// Checkboxes
+input[type='checkbox'] {
+  appearance: none;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 1px solid #454342;
+  transform: translateY(4px);
+  cursor: pointer;
+}
+
+input[type='checkbox'] + label {
+  cursor: pointer;
+}
+
+input[type='checkbox']:checked {
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' stroke='%23454342' d='M.5.5h15v15H.5z'/%3E%3Cpath d='m3.333 7.708 3.5 3.5 6.417-6.416' stroke='%23454342' stroke-miterlimit='10'/%3E%3C/svg%3E");
+  background-repeat: none;
+  background-position: center;
+}
+
+input[type='checkbox']:disabled {
+  opacity: 40%;
+  cursor: auto;
+}
+
+input[type='checkbox']:disabled + label {
+  opacity: 40%;
+  cursor: auto;
+}

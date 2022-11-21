@@ -6,7 +6,6 @@ import { headerNavMenus } from '@/data/navs';
 
 const ShopPage = () => {
   const categories = headerNavMenus.find((menu) => menu.title === 'Categories');
-  console.log(categories);
 
   return (
     <div className="container-fluid | flex flex-col gap-8">
