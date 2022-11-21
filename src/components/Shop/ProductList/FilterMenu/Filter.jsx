@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Filter = ({ filteredProducts, filterParams, filter, filterCat, onFilterChange }) => {
   const checked = filterParams[filterCat].includes(filter);
 

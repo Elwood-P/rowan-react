@@ -10,9 +10,9 @@ export const headerNavMenus = [
     title: 'Categories',
     links: [
       { linkText: 'Knitwear', link: '/shop?category=knitwear' },
-      { linkText: 'Tops & T-Shirts', link: '/shop?category=tops & t-shirts' },
+      { linkText: 'Tops & T-Shirts', link: '/shop?category=tops+%26+t-shirts' },
       { linkText: 'Dresses', link: '/shop?category=dresses' },
-      { linkText: 'Trousers & Jeans', link: '/shop?category=trousers & jeans' },
+      { linkText: 'Trousers & Jeans', link: '/shop?category=trousers+%26+jeans' },
     ],
   },
   {
