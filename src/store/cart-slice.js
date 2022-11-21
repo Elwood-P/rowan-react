@@ -47,7 +47,6 @@ const cartSlice = createSlice({
       const cartItems = state.items;
       const cartItemToAdd = action.payload;
       const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size);
-      // toast(`${cartItemToAdd.qty} x "${cartItemToAdd.name} - ${cartItemToAdd.size}" has been added to your basket.`, { type: 'success' });
 
       if (existingCartItem) {
         return {

@@ -37,7 +37,7 @@ const MiniCart = () => {
         </header>
 
         <div className="grid grid-cols-1 | w-full | border-b border-black border-opacity-10">
-          {cart.items.map((cartItem) => {
+          {cart.items.slice(0).reverse().map((cartItem) => {
             return <MiniCartItem key={`${cartItem.id}-${cartItem.size}`} closeMiniCart={closeMiniCartHandler} {...cartItem} />;
           })}
         </div>
