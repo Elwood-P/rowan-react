@@ -42,6 +42,11 @@ const MiniCart = () => {
           })}
         </div>
 
+        <div>
+          <p>Order Total</p>
+          <p>{totalPrice}</p>
+        </div>
+
         <div className="grid grid-cols-2 gap-4">
           <Link className="btn" to="/basket" onClick={closeMiniCartHandler}>
             View Basket
