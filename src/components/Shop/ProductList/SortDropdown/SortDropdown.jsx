@@ -8,7 +8,7 @@ const SortDropdown = ({ onSortChange, sortParams }) => {
 
   return (
     <select
-      className="form-select appearance-none | bg-transparent | text-100 font-normal uppercase tracking-wide leading-none"
+      className="form-select appearance-none | bg-transparent border-none | text-100 font-normal uppercase tracking-wide leading-none"
       value={sortParams.order}
       onChange={onChangeHandler}
     >

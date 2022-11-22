@@ -89,6 +89,6 @@ module.exports = {
     // Define variants
   },
   plugins: [
-    // require('@tailwindcss/forms'),
+    require('@tailwindcss/forms'),
   ],
 };

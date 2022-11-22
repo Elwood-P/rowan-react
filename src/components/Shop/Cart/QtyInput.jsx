@@ -10,7 +10,7 @@ const QtyInput = ({ qty, onQtyInputChange, onQtyButtonClick }) => {
       </button>
       <input
         type="number"
-        className="input-qty qty | w-full h-full px-0 py-2 | border border-[#E4DFDA] | text-center"
+        className="input-qty qty | w-full h-full px-0 py-2 | border border-black border-opacity-20 | text-center | appearance-none"
         step="1"
         min="0"
         value={qty}

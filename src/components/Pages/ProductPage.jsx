@@ -22,7 +22,7 @@ const ProductPage = () => {
             </div>
           </div>
 
-          <div className="col-start-8 col-span-5 | flex flex-col space-y-9">
+          <div className="col-start-8 col-span-5 | flex flex-col space-y-10">
             <Breadcrumb />
             <h1 className="hidden sm:block | font-serif font-normal text-800">{name}</h1>
             <div>{description}</div>

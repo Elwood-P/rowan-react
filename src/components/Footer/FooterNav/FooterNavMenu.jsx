@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 
 const FooterNavMenu = ({ menu }) => {
   return (
-    <li className="active menu-item menu-item-has-children menu-shop">
-      <h3>{menu.title}</h3>
-      <menu>
+    <li>
+      <h3 className="mb-2 text-100 font-semibold uppercase tracking-wide leading-loose">{menu.title}</h3>
+      <menu className="text-300 leading-7">
         {menu.links.map((link) => {
           return (
             <li key={link.linkText}>
-              <Link to={link.link}>{link.linkText}</Link>
+              <Link className="hover:underline" to={link.link}>{link.linkText}</Link>
             </li>
           );
         })}

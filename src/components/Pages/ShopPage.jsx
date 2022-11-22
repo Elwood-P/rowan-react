@@ -12,8 +12,8 @@ const ShopPage = () => {
       <PageHeader title="Shop">
         <nav className="flex justify-center space-x-7 | font-normal">
           {categories.links.map((category) => (
-            <Link className="text-100 uppercase tracking-wide" to={category.link} key={category.linkText}>
-              {category.linkText}
+            <Link className="text-100 uppercase tracking-wide hover:underline" to={category.link} key={category.linkText}>
+              {category.linkText.split(' ')[0]}
             </Link>
           ))}
         </nav>

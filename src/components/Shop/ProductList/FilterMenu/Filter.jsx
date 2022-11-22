@@ -2,6 +2,7 @@ const Filter = ({ filteredProducts, filterParams, filter, filterCat, onFilterCha
   const checked = filterParams[filterCat].includes(filter);
 
   const inputChangeHandler = (e) => {
+    e.target.blur();
     onFilterChange(filterCat, filter, e.target.checked);
   };
 
