@@ -55,7 +55,7 @@ const ProductList = ({ products }) => {
             </button>
             <SortDropdown onSortChange={onSortChange} sortParams={sortParams} />
           </div>
-          <div>{filteredProductCount} products found</div>
+          <div className="text-300">{filteredProductCount} products found</div>
         </div>
         {isFilterMenuOpen && (
           <FilterMenu filteredProducts={filteredProducts} filters={filters} filterParams={filterParams} onFilterChange={onFilterChange} />
