@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '@/store/cart-slice';
 
-import QtyInput from '../Cart/QtyInput';
+import QtyInput from '@/components/Shop/Common/QtyInput';
 
 const SingleProductForm = ({ product }) => {
   const [optionSize, setOptionSize] = useState('md');

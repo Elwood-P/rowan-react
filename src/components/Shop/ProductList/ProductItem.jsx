@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 
+import SaleTag from '@/components/Shop/Common/SaleTag';
+
 import randomCornerClass from '@/utilities/randomCornerClass';
 
-const ProductItem = ({ id, name, imageUrl, price, onSale, salePrice }) => {
+const ProductItem = ({ id, name, imageUrl, price, sale, salePrice }) => {
   const imageOptions = '?fit=min&w=311&h=400&auto=format&q=75';
   const cornerClass = randomCornerClass(id);
 
@@ -15,9 +17,9 @@ const ProductItem = ({ id, name, imageUrl, price, onSale, salePrice }) => {
         <div className="py-4 | text-100 uppercase text-center font-normal">
           <h2 className="leading-loose tracking-wide hover:underline">{name}</h2>
           <p className="flex justify-center space-x-2 | text-200">
-            {onSale && <span className="inline-flex items-center | px-1 | bg-black | text-cream leading-none">Sale</span>}
-            <span className={onSale ? 'line-through' : 'font-semibold'}>£{price.toFixed(2)}</span>
-            {onSale && <span>£{salePrice.toFixed(2)}</span>}
+            {sale && <SaleTag />}
+            <span className={sale ? 'line-through opacity-30' : 'font-semibold'}>£{price.toFixed(2)}</span>
+            {sale && <span>£{salePrice.toFixed(2)}</span>}
           </p>
         </div>
       </Link>

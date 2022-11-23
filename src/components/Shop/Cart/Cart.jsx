@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
-
 import CartItem from '@/components/Shop/Cart/CartItem';
+import totalCartPrice from '@/utilities/totalCartPrice';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  const totalPrice = cart.items.reduce((prevTot, item) => prevTot + item.qty * item.price, 0);
+  const totalPrice = totalCartPrice(cart);
 
   return (
     <>

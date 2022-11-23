@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { closeMiniCart } from '@/store/cart-slice';
+import { Link } from 'react-router-dom';
 
 import Overlay from '@/components/UI/Overlay';
 import MiniCartItem from '@/components/Shop/Cart/MiniCartItem';
-import { Link } from 'react-router-dom';
-
 import { ReactComponent as CloseIcon } from '@/assets/images/icons/close-icon.svg';
+
+import totalCartPrice from '@/utilities/totalCartPrice';
 
 const MiniCart = () => {
   const cart = useSelector((state) => state.cart);
-  const totalPrice = cart.items.reduce((prevTot, item) => prevTot + item.qty * item.price, 0);
+  const totalPrice = totalCartPrice(cart);
   const [translate, setTranslate] = useState('translate-x-full');
   const dispatch = useDispatch();
 

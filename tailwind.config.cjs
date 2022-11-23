@@ -20,6 +20,10 @@ module.exports = {
     'rounded-tr-[40px]',
     'rounded-bl-[40px]',
     'rounded-br-[40px]',
+    'rounded-tl-[100px]',
+    'rounded-tr-[100px]',
+    'rounded-bl-[100px]',
+    'rounded-br-[100px]',
   ],
   theme: {
     colors: {

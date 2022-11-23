@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { removeItem } from '@/store/cart-slice';
 import { ReactComponent as CloseIcon } from '@/assets/images/icons/close-icon.svg';
+import SaleTag from '@/components/Shop/Common/SaleTag';
 import { Link } from 'react-router-dom';
 
 const CartItem = (cartItem) => {
@@ -14,12 +15,16 @@ const CartItem = (cartItem) => {
   return (
     <div className="flex | justify-between | w-full py-8 | border-t border-black border-opacity-10 | text-200 font-semibold uppercase tracking-wide">
       <Link to={`/product/${id}`} onClick={closeMiniCart}>
-        <div className="flex | gap-4">
+        <div className="flex items-start | gap-4">
           <img width="80" height="80" src={`${imageUrl}?fit=min&w=120&h=120&auto=format&q=75`} />
           <div>
             <h2>{name}</h2>
             <p>{size}</p>
-            <p>{`£${price}`}</p>
+            <div className="flex gap-2">
+              {sale && <SaleTag fontSize="50" />}
+              <span className={sale ? 'line-through opacity-30' : ''}>£{price.toFixed(2)}</span>
+              {sale && <span>£{salePrice.toFixed(2)}</span>}
+            </div>
             <p>QTY: {qty}</p>
           </div>
         </div>
@@ -28,7 +33,7 @@ const CartItem = (cartItem) => {
         <button onClick={removeButtonHandler}>
           <CloseIcon className="w-[14px]" />
         </button>
-        <div className="font-semibold text-600 text-right">{`£${price * qty}`}</div>
+        <div className="font-semibold text-600 text-right">{sale ? `£${salePrice * qty}` : `£${price * qty}`}</div>
       </div>
     </div>
   );

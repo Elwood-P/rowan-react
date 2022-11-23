@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 const NewsletterSignup = () => {
   const onSubmitBtnClick = (e) => {
     e.preventDefault();
+    e.target.blur();
     toast('Please do not press this button again.', { type: 'success' });
   };
 
