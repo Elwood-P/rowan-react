@@ -5,7 +5,7 @@ const EmptyCart = () => {
   return (
     <div className="flex flex-col items-center gap-12">
       <div className="w-full py-12 | border-y border-black border-opacity-10 | font-semibold text-400 uppercase tracking-wide">
-        The basket is empty.
+        Your basket is empty.
       </div>
       <Link to="/shop">
         <button className="btn">

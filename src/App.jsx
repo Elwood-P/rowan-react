@@ -2,7 +2,7 @@ import { useRoutes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Header from '@/components/Header/Header';
-import MiniCart from '@/components/Shop/Cart/MiniCart';
+import MiniCartSidebar from '@/components/Shop/Cart/MiniCartSidebar';
 import Footer from '@/components/Footer/Footer';
 import NewsletterSignup from '@/components/Footer/NewsletterSignup';
 import ShopPage from '@/components/Pages/ShopPage';
@@ -24,7 +24,7 @@ const App = () => {
   return (
     <>
       <Header />
-      {isMiniCartOpen && <MiniCart />}
+      {isMiniCartOpen && <MiniCartSidebar />}
       {routes}
       <NewsletterSignup />
       <Footer />
