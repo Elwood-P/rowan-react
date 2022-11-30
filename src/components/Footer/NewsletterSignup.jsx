@@ -4,7 +4,7 @@ const NewsletterSignup = () => {
   const onSubmitBtnClick = (e) => {
     e.preventDefault();
     e.target.blur();
-    toast('Please do not press this button again.', { type: 'success' });
+    toast('Please don\'t press this button again.', { type: 'error' });
   };
 
   return (
@@ -26,7 +26,7 @@ const NewsletterSignup = () => {
           <p className="mb-8 | text-500 text-center">
             Keep up to date with our latest news, offers and events. You'll receive an email shortly with your unique code.
           </p>
-          <form className="grid-newsletter-form | justify-center | flex flex-col space-y-2 xs:grid xs:space-y-0" action="">
+          <form className="grid grid-cols-[300px_max-content] | justify-center | flex flex-col space-y-2 xs:grid xs:space-y-0" action="">
             <input className="w-full | border-black border-r-0 focus:border-r-0 | font-light" type="email" placeholder="Email Address" />
             <button onClick={onSubmitBtnClick} className="btn btn-secondary | px-5 | uppercase" type="submit">
               Sign Up

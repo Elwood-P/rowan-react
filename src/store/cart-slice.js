@@ -20,19 +20,24 @@ const cartSlice = createSlice({
         qty: 3,
       },
       {
-        id: 'felted-wool-jumper',
-        name: 'Felted Wool Jumper',
-        description:
-          'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor.',
-        imageUrl: 'https://kimba.imgix.net/wp-content/uploads/2021/09/shirt-stars.jpg',
+        id: 'grey-ribbed-funnel-neck-jumper',
+        name: 'Grey Ribbed Funnel Neck Jumper',
+        description: 'Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.',
+        imageUrl: 'https://kimba.imgix.net/wp-content/uploads/2021/09/jumper-grey.jpg',
         category: 'knitwear',
         material: 'ethically sourced wool',
-        price: 70,
+        price: 80,
         sale: false,
         salePrice: null,
-        size: 'sm',
-        qty: 2,
-      },
+        size: 'md',
+        related: [
+          'rust-wool-jumper',
+          'felted-wool-jumper',
+          'felted-wool-jumper',
+          'oversized-fennel-jumper'
+        ],
+        qty: 1
+      }
     ],
   },
   reducers: {

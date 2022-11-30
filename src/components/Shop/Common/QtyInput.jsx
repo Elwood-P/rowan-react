@@ -1,6 +1,6 @@
 const QtyInput = ({ qty, onQtyInputChange, onQtyButtonClick }) => {
   return (
-    <div className="relative | flex | w-full h-full">
+    <div className="relative | flex | w-full">
       <button
         className="button-qty button-qty-dec | flex justify-start items-center | w-10 | outline-none | cursor-pointer"
         type="button"

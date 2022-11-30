@@ -16,6 +16,14 @@ module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   safelist: [
     // Rounded corner classes are generated dynamically
+    'rounded-tl-[22px]',
+    'rounded-tr-[22px]',
+    'rounded-bl-[22px]',
+    'rounded-br-[22px]',
+    'rounded-tl-[30px]',
+    'rounded-tr-[30px]',
+    'rounded-bl-[30px]',
+    'rounded-br-[30px]',
     'rounded-tl-[40px]',
     'rounded-tr-[40px]',
     'rounded-bl-[40px]',
@@ -77,9 +85,8 @@ module.exports = {
     letterSpacing: {
       wide: '.075em',
     },
-    borderRadius: {
-      '3xl': '9.375rem',
-      full: '9999px',
+    dropShadow: {
+      'tiny': '0 2px 0 rgba(69,67,66, 0.1)',
     },
 
     extend: {

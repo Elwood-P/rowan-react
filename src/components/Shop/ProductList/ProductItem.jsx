@@ -18,8 +18,8 @@ const ProductItem = ({ id, name, imageUrl, price, sale, salePrice }) => {
           <h2 className="leading-loose tracking-wide hover:underline">{name}</h2>
           <p className="flex justify-center space-x-2 | text-200">
             {sale && <SaleTag />}
-            <span className={sale ? 'line-through opacity-30' : 'font-semibold'}>£{price.toFixed(2)}</span>
-            {sale && <span>£{salePrice.toFixed(2)}</span>}
+            <span className={sale ? 'line-through opacity-30' : 'font-bold'}>£{price.toFixed(2)}</span>
+            {sale && <span className="font-bold">£{salePrice.toFixed(2)}</span>}
           </p>
         </div>
       </Link>

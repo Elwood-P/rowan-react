@@ -9,7 +9,7 @@ import ShopPage from '@/components/Pages/ShopPage';
 import BasketPage from '@/components/Pages/BasketPage';
 import ProductPage from '@/components/Pages/ProductPage';
 import PageNotFound from '@/components/Pages/PageNotFound';
-import Notifications from './components/UI/Notifications';
+import Notification from './components/UI/Notification';
 
 const App = () => {
   const isMiniCartOpen = useSelector((state) => state.cart.isMiniCartOpen);
@@ -28,7 +28,7 @@ const App = () => {
       {routes}
       <NewsletterSignup />
       <Footer />
-      <Notifications />
+      <Notification />
     </>
   );
 };
