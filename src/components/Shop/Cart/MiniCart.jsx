@@ -4,7 +4,7 @@ import totalCartPrice from '@/utilities/totalCartPrice';
 import { Link } from 'react-router-dom';
 import CheckoutBtn from '@/components/Shop/Common/CheckoutBtn';
 
-const MiniCart = ({ closeMiniCartHandler }) => {
+const MiniCart = ({ closeMiniCart }) => {
   const cart = useSelector((state) => state.cart);
   const totalPrice = totalCartPrice(cart);
 
@@ -15,7 +15,7 @@ const MiniCart = ({ closeMiniCartHandler }) => {
           .slice(0)
           .reverse()
           .map((cartItem) => {
-            return <MiniCartItem key={`${cartItem.id}-${cartItem.size}`} closeMiniCart={closeMiniCartHandler} {...cartItem} />;
+            return <MiniCartItem key={`${cartItem.id}-${cartItem.size}`} closeMiniCart={closeMiniCart} {...cartItem} />;
           })}
       </div>
 
@@ -25,7 +25,7 @@ const MiniCart = ({ closeMiniCartHandler }) => {
       </div>
 
       <div className="grid grid-cols-2 gap-4">
-        <Link className="btn" to="/basket" onClick={closeMiniCartHandler}>
+        <Link className="btn" to="/basket" onClick={closeMiniCart}>
           View Basket
         </Link>
         <CheckoutBtn />
