@@ -5,7 +5,7 @@ const CheckoutBtn = ({ children }) => {
   const onCheckoutBtnClick = (e) => {
     e.preventDefault();
     e.target.blur();
-    toast("Unfortunatly it's not possilbe to buy any of these lovely things.", { type: 'error' });
+    toast("Unfortunately it's not possilbe to buy any of these lovely things.", { type: 'error' });
   };
 
   return (
