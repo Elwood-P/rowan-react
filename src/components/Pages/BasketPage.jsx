@@ -1,9 +1,12 @@
-import React from 'react';
-
+import { useSelector } from 'react-redux';
 import Breadcrumb from '@/components/UI/Breadcrumb';
 import Cart from '@/components/Shop/Cart/Cart';
+import isCartEmpty from '@/utilities/isCartEmpty';
+import EmptyCart from '@/components/Shop/Cart/EmptyCart';
 
 const BasketPage = () => {
+  const cart = useSelector((state) => state.cart);
+
   return (
     <div className="container-fluid | my-32">
       <header className="flex flex-col items-center space-y-6 | my-fl-400">
@@ -14,8 +17,7 @@ const BasketPage = () => {
         <Breadcrumb />
       </div>
 
-      <Cart />
-
+      {!isCartEmpty(cart) ? <Cart /> : <EmptyCart />}
     </div>
   );
 };
