@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const LOCAL_STORAGE_KEY = 'rowanReact.cartItems';
+export const LOCAL_STORAGE_KEY = 'rowanReact.cartItems';
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -22,38 +22,31 @@ const cartSlice = createSlice({
       const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size);
 
       if (existingCartItem) {
-        const updatedCartItems = cartItems.map((cartItem) =>
-          cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size
-            ? { ...cartItem, qty: cartItem.qty + cartItemToAdd.qty }
-            : cartItem
-        );
-
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCartItems));
         return {
           ...state,
           isMiniCartOpen: true,
-          items: updatedCartItems,
+          items: cartItems.map((cartItem) =>
+            cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size
+              ? { ...cartItem, qty: cartItem.qty + cartItemToAdd.qty }
+              : cartItem
+          ),
         };
       }
 
-      const updatedCartItems = [...cartItems, { ...cartItemToAdd }];
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCartItems));
-      return { ...state, isMiniCartOpen: true, items: updatedCartItems };
+      return { ...state, isMiniCartOpen: true, items: [...cartItems, { ...cartItemToAdd }] };
     },
 
     updateItemQty: (state, action) => {
       const cartItems = state.items;
       const cartItemToUpdate = action.payload;
 
-      const updatedCartItems = cartItems.map((cartItem) =>
-        cartItem.id === cartItemToUpdate.id && cartItem.size === cartItemToUpdate.size
-          ? { ...cartItem, qty: cartItemToUpdate.qty }
-          : cartItem
-      );
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCartItems));
       return {
         ...state,
-        items: updatedCartItems,
+        items: cartItems.map((cartItem) =>
+          cartItem.id === cartItemToUpdate.id && cartItem.size === cartItemToUpdate.size
+            ? { ...cartItem, qty: cartItemToUpdate.qty }
+            : cartItem
+        ),
       };
     },
 
@@ -61,13 +54,9 @@ const cartSlice = createSlice({
       const cartItems = state.items;
       const cartItemToRemove = action.payload;
 
-      const updatedCartItems = cartItems.filter(
-        (cartItem) => !(cartItem.id === cartItemToRemove.id && cartItem.size === cartItemToRemove.size)
-      );
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCartItems));
       return {
         ...state,
-        items: updatedCartItems,
+        items: cartItems.filter((cartItem) => !(cartItem.id === cartItemToRemove.id && cartItem.size === cartItemToRemove.size)),
       };
     },
   },
