@@ -1,44 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const LOCAL_STORAGE_KEY = 'rowanReact.cartItems';
+
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
     isMiniCartOpen: false,
-    items: [
-      {
-        id: 'aztec-autumn-wool-jumper',
-        name: 'Aztec Autumn Wool Jumper',
-        description:
-          'Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum.',
-        imageUrl: 'https://kimba.imgix.net/wp-content/uploads/2021/08/jumper-zigzag.jpg',
-        category: 'tops & t-shirts',
-        material: 'ethically sourced wool',
-        price: 90,
-        sale: 'on sale',
-        salePrice: 70,
-        size: '2xl',
-        qty: 3,
-      },
-      {
-        id: 'grey-ribbed-funnel-neck-jumper',
-        name: 'Grey Ribbed Funnel Neck Jumper',
-        description: 'Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue.',
-        imageUrl: 'https://kimba.imgix.net/wp-content/uploads/2021/09/jumper-grey.jpg',
-        category: 'knitwear',
-        material: 'ethically sourced wool',
-        price: 80,
-        sale: false,
-        salePrice: null,
-        size: 'md',
-        related: [
-          'rust-wool-jumper',
-          'felted-wool-jumper',
-          'felted-wool-jumper',
-          'oversized-fennel-jumper'
-        ],
-        qty: 1
-      }
-    ],
+    items: JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? [],
   },
   reducers: {
     closeMiniCart: (state) => {
@@ -54,31 +22,38 @@ const cartSlice = createSlice({
       const existingCartItem = cartItems.find((cartItem) => cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size);
 
       if (existingCartItem) {
+        const updatedCartItems = cartItems.map((cartItem) =>
+          cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size
+            ? { ...cartItem, qty: cartItem.qty + cartItemToAdd.qty }
+            : cartItem
+        );
+
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCartItems));
         return {
           ...state,
           isMiniCartOpen: true,
-          items: cartItems.map((cartItem) =>
-            cartItem.id === cartItemToAdd.id && cartItem.size === cartItemToAdd.size
-              ? { ...cartItem, qty: cartItem.qty + cartItemToAdd.qty }
-              : cartItem
-          ),
+          items: updatedCartItems,
         };
       }
 
-      return { ...state, isMiniCartOpen: true, items: [...cartItems, { ...cartItemToAdd }] };
+      const updatedCartItems = [...cartItems, { ...cartItemToAdd }];
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCartItems));
+      return { ...state, isMiniCartOpen: true, items: updatedCartItems };
     },
 
     updateItemQty: (state, action) => {
       const cartItems = state.items;
       const cartItemToUpdate = action.payload;
 
+      const updatedCartItems = cartItems.map((cartItem) =>
+        cartItem.id === cartItemToUpdate.id && cartItem.size === cartItemToUpdate.size
+          ? { ...cartItem, qty: cartItemToUpdate.qty }
+          : cartItem
+      );
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCartItems));
       return {
         ...state,
-        items: cartItems.map((cartItem) =>
-          cartItem.id === cartItemToUpdate.id && cartItem.size === cartItemToUpdate.size
-            ? { ...cartItem, qty: cartItemToUpdate.qty }
-            : cartItem
-        ),
+        items: updatedCartItems,
       };
     },
 
@@ -86,9 +61,13 @@ const cartSlice = createSlice({
       const cartItems = state.items;
       const cartItemToRemove = action.payload;
 
+      const updatedCartItems = cartItems.filter(
+        (cartItem) => !(cartItem.id === cartItemToRemove.id && cartItem.size === cartItemToRemove.size)
+      );
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedCartItems));
       return {
         ...state,
-        items: cartItems.filter((cartItem) => !(cartItem.id === cartItemToRemove.id && cartItem.size === cartItemToRemove.size)),
+        items: updatedCartItems,
       };
     },
   },
