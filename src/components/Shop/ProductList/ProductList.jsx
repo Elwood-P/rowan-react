@@ -13,7 +13,7 @@ import { ReactComponent as FilterOffIcon } from '@/assets/images/icons/filter-of
 import { filters, filterParamDefaults } from '@/data/filters';
 import { filterProducts, sortProducts } from './helpers';
 
-const ProductList = ({ products }) => {
+const ProductList = () => {
   const allProducts = useSelector((state) => state.products);
   const [filterParams, setFilterParams] = useSearchParamsState(filterParamDefaults);
   const filterCount = Object.values(filterParams).reduce((prevCount, filterCat) => prevCount + filterCat.length, 0);
