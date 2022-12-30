@@ -24,7 +24,7 @@ const MiniCartSidebar = () => {
     <>
       <Overlay onOverlayClick={closeMiniCartHandler} />
       <div
-        className={`fixed top-0 right-0 w-[510px] h-full | flex flex-col gap-8 | p-9 | bg-cream  bg-opacity-95 | border-l border-black border-opacity-25 | z-50 overflow-auto | transition-all ease-out duration-300 ${translate}`}
+        className={`fixed top-0 right-0 w-full sm:w-[510px] h-full | flex flex-col gap-8 | p-9 | bg-cream  bg-opacity-95 | sm:border-l border-black border-opacity-25 | z-50 overflow-auto | transition-all ease-out duration-300 ${translate}`}
         style={{ backdropFilter: 'blur(3px)' }}
       >
         <header className="flex justify-between items-start">

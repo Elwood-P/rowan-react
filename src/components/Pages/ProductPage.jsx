@@ -18,15 +18,15 @@ const ProductPage = () => {
 
   return (
     <div className="container-fluid | my-32">
-      <div className="grid grid-cols-12 gap-x-10 gap-y-12">
+      <div className="grid grid-cols-6 sm:grid-cols-12 gap-x-10 gap-y-12">
         <div className="col-span-6">
-          <h1 className="heading-primary | block sm:hidden">{name}</h1>
-          <img className={`rounded-${cornerClass}-[100px]`} width="632" height="811" src={imageUrl + imageOptions} />
+          <img className={`hidden sm:block | rounded-${cornerClass}-[100px]`} width="632" height="811" src={imageUrl + imageOptions} />
         </div>
 
-        <div className="col-start-8 col-span-5 | flex flex-col space-y-10">
+        <div className="col-span-6 xl:col-start-8 xl:col-span-5 | flex flex-col space-y-10">
           <Breadcrumb />
-          <h1 className="hidden sm:block | font-serif font-normal text-800">{name}</h1>
+          <h1 className="font-serif font-normal text-800">{name}</h1>
+          <img className={`block sm:hidden | rounded-${cornerClass}-[100px]`} width="632" height="811" src={imageUrl + imageOptions} />
           <div>{description}</div>
           <p className="flex gap-3 items-baseline | text-700 font-semibold">
             {sale && <SaleTag fontSize="200" />}

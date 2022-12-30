@@ -28,8 +28,8 @@ const CartItem = (cartItem) => {
   };
 
   return (
-    <div className="grid grid-cols-[100px_1fr] sm:grid-cols-[1fr_100px_130px] | gap-x-6 gap-y-6 items-center sm:gap-x-8 md:gap-x-12 | w-full py-8 | border-t border-black border-opacity-10">
-      <div className="group | grid grid-cols-[100px_1fr] gap-x-6">
+    <div className="grid grid-cols-[1fr_100px] sm:grid-cols-[1fr_100px_130px] | gap-x-6 gap-y-3 sm:gap-y-6 items-center sm:gap-x-8 md:gap-x-12 | w-full py-8 | border-t border-black border-opacity-10 | text-100 sm:text-200 md:text-400">
+      <div className="group | grid grid-cols-[80px_1fr] sm:grid-cols-[100px_1fr] gap-x-6">
         <Link className={`rounded-${cornerClass}-[30px] overflow-hidden`} to={`/product/${id}`}>
           <img
             className="group-hover:scale-105 transition-transform duration-300 ease-out"
@@ -58,7 +58,7 @@ const CartItem = (cartItem) => {
       </div>
 
       <QtyInput qty={qty} onQtyInputChange={qtyInputChangeHandler} onQtyButtonClick={qtyButtonHandler} />
-      <div className="font-semibold text-600 text-right">{sale ? `£${salePrice * qty}` : `£${price * qty}`}</div>
+      <div className="col-span-full sm:col-span-1 font-semibold text-600 text-right">{sale ? `£${salePrice * qty}` : `£${price * qty}`}</div>
     </div>
   );
 };

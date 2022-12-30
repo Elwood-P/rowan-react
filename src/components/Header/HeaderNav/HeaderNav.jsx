@@ -11,11 +11,13 @@ const HeaderNav = () => {
         style={{ backdropFilter: 'blur(3px)' }}
       >
         <div className="container-fluid">
-          <menu id="menu-primary-navigation" className="flex gap-x-24">
+          <menu id="menu-primary-navigation" className="flex flex-col sm:flex-row sm:gap-x-24 gap-y-6">
             {headerNavMenus.map((menu) => (
               <HeaderNavMenu key={menu.title} menu={menu} />
             ))}
-            <HeaderNavSale />
+            <div className="hidden md:block | ml-auto">
+              <HeaderNavSale />
+            </div>
           </menu>
         </div>
       </div>

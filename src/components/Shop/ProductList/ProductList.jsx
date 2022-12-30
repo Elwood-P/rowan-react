@@ -45,7 +45,7 @@ const ProductList = () => {
     <>
       <div className="flex flex-col gap-3">
         <div className="flex | justify-between">
-          <div className="flex | gap-8">
+          <div className="flex gap-8">
             <button
               className="flex items-center | gap-2 | text-100 font-normal uppercase tracking-wide leading-none"
               onClick={filterButtonHandler}
@@ -55,7 +55,7 @@ const ProductList = () => {
             </button>
             <SortDropdown onSortChange={onSortChange} sortParams={sortParams} />
           </div>
-          <div className="text-300">{filteredProductCount} products found</div>
+          <div className="hidden sm:block | text-300">{filteredProductCount} products found</div>
         </div>
         {isFilterMenuOpen && (
           <FilterMenu filteredProducts={filteredProducts} filters={filters} filterParams={filterParams} onFilterChange={onFilterChange} />

@@ -18,7 +18,7 @@ const NewsletterSignup = () => {
         loading="lazy"
       />
       <div className="container-fluid | relative z-20 | py-28 | grid grid-cols-12">
-        <div className="col-span-12 sm:col-start-2 sm:col-span-10 lg:col-start-4 lg:col-span-6">
+        <div className="col-span-12 sm:col-start-2 sm:col-span-10 lg:col-start-4 lg:col-span-6 | px-2">
           <h2 className="heading-secondary | mb-4 | text-700 font-semibold uppercase tracking-wide text-center">
             15% Off When You <br />
             Sign Up to Our Newsletter
@@ -26,8 +26,8 @@ const NewsletterSignup = () => {
           <p className="mb-8 | text-500 text-center">
             Keep up to date with our latest news, offers and events. You'll receive an email shortly with your unique code.
           </p>
-          <form className="grid grid-cols-[300px_max-content] | justify-center | flex flex-col space-y-2 xs:grid xs:space-y-0" action="">
-            <input className="w-full | border-black border-r-0 focus:border-r-0 | font-light" type="email" placeholder="Email Address" />
+          <form className="flex flex-col sm:grid sm:grid-cols-[300px_max-content] gap-y-4 justify-center | px-8 sm:px-0" action="">
+            <input className="w-full | border-black sm:border-r-0 sm:focus:border-r-0 | font-light" type="email" placeholder="Email Address" />
             <button onClick={onSubmitBtnClick} className="btn btn-secondary | px-5 | uppercase" type="submit">
               Sign Up
             </button>

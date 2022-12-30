@@ -4,7 +4,7 @@ import { ReactComponent as ArrowIcon } from '@/assets/images/icons/arrow-icon.sv
 
 const HeaderNavSale = () => {
   return (
-    <Link className="ml-auto" to="/shop?sale=on+sale">
+    <Link to="/shop?sale=on+sale">
       <figure className="group | max-w-[160px] | flex flex-col items-end space-y-3">
         <div className="rounded-bl-[3.5rem] | overflow-hidden | w-[130px] h-[130px]">
           <img
