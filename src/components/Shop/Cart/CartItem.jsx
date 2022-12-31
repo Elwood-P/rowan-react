@@ -28,8 +28,8 @@ const CartItem = (cartItem) => {
   };
 
   return (
-    <div className="grid grid-cols-[1fr_100px] sm:grid-cols-[1fr_100px_130px] | gap-x-6 gap-y-3 sm:gap-y-6 items-center sm:gap-x-8 md:gap-x-12 | w-full py-8 | border-t border-black border-opacity-10 | text-100 sm:text-200 md:text-400">
-      <div className="group | grid grid-cols-[80px_1fr] sm:grid-cols-[100px_1fr] gap-x-6">
+    <div className="grid grid-cols-[1fr_100px] sm:grid-cols-[1fr_100px_130px] | gap-x-4 sm:gap-x-6 gap-y-3 sm:gap-y-6 items-center sm:gap-x-8 md:gap-x-12 | w-full py-8 | border-t border-black border-opacity-10 | text-100 sm:text-200 md:text-400">
+      <div className="group | grid items-start grid-cols-[70px_1fr] sm:grid-cols-[100px_1fr] gap-x-4 sm:gap-x-6">
         <Link className={`rounded-${cornerClass}-[30px] overflow-hidden`} to={`/product/${id}`}>
           <img
             className="group-hover:scale-105 transition-transform duration-300 ease-out"
@@ -41,7 +41,7 @@ const CartItem = (cartItem) => {
         <div className="uppercase tracking-wide | font-normal">
           <Link to={`/product/${id}`}><h2 className="hover:underline | font-semibold">{name}</h2></Link>
           <p>{size}</p>
-          <div className="flex items-end gap-2">
+          <div className="flex flex-wrap items-end gap-2">
             {sale && <SaleTag fontSize="50" />}
             <span className={sale ? 'line-through opacity-30' : ''}>£{price.toFixed(2)}</span>
             {sale && <span>£{salePrice.toFixed(2)}</span>}

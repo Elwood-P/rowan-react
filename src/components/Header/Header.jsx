@@ -32,8 +32,8 @@ const Header = () => {
 
   return (
     <>
-      <header className="container-fluid">
-        <div className="relative | flex items-center justify-between | w-full h-18 | text-fl-400">
+      <header className="container-fluid | my-6">
+        <div className="relative | flex items-center justify-between | w-full | text-fl-400">
           <Link to="/shop">
             <img src={logo} alt="Rowan Logo" />
           </Link>

@@ -5,5 +5,9 @@
 }
 
 .my-fl-400 {
-  @include fluid-property(margin-block, toRem(3px), toRem(120px));
+  @include fluid-property(margin-block, toRem(88px), toRem(128px));
+}
+
+.py-fl-28 {
+  @include fluid-property(padding-block, toRem(80px), toRem(112px));
 }

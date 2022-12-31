@@ -8,7 +8,7 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section className="relative | my-32 | background-cream | rounded-tr-[150px] rounded-bl-[150px] | overflow-hidden">
+    <section className="relative | my-fl-400 | background-cream | rounded-tr-[150px] rounded-bl-[150px] | overflow-hidden">
       <img
         className="absolute z-0 | w-full h-full | object-cover object-center | opacity-70"
         width="1920"
@@ -17,7 +17,7 @@ const NewsletterSignup = () => {
         alt="Girl in Jeans"
         loading="lazy"
       />
-      <div className="container-fluid | relative z-20 | py-28 | grid grid-cols-12">
+      <div className="container-fluid | relative z-20 | py-fl-28 | grid grid-cols-12">
         <div className="col-span-12 sm:col-start-2 sm:col-span-10 lg:col-start-4 lg:col-span-6 | px-2">
           <h2 className="heading-secondary | mb-4 | text-700 font-semibold uppercase tracking-wide text-center">
             15% Off When You <br />

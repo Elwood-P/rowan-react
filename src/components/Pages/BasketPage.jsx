@@ -8,7 +8,7 @@ const BasketPage = () => {
   const cart = useSelector((state) => state.cart);
 
   return (
-    <div className="container-fluid | my-32">
+    <div className="container-fluid | my-fl-400 pb-10">
       <header className="flex flex-col items-center space-y-6 | my-fl-400">
         <h1 className="font-serif font-normal text-800">Basket</h1>
       </header>

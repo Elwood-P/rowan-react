@@ -7,11 +7,11 @@ const breadcrumbRoutes = [
   { path: 'product', breadcrumb: 'shop', props: { customLink: '/shop' } },
 ];
 
-const Breadcrumb = () => {
+const Breadcrumb = ({className}) => {
   const breadcrumbs = useBreadcrumbs(breadcrumbRoutes);
 
   return (
-    <nav className="flex items-center | text-100 font-normal uppercase tracking-wide leading-none">
+    <nav className={`flex items-center | text-100 font-normal uppercase tracking-wide leading-none ${className}`}>
       {breadcrumbs.map(({ match, breadcrumb, customLink }, i, breadcrumbs) => {
         return (
           <div key={match.pathname}>

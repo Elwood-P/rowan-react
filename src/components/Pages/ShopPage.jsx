@@ -8,9 +8,9 @@ const ShopPage = () => {
   const categories = headerNavMenus.find((menu) => menu.title === 'Categories');
 
   return (
-    <div className="container-fluid | flex flex-col gap-8">
+    <div className="container-fluid">
       <PageHeader title="Shop">
-        <nav className="flex justify-center space-x-7 | font-normal">
+        <nav className="hidden sm:flex justify-center space-x-7 | font-normal">
           {categories.links.map((category) => (
             <Link className="text-100 uppercase tracking-wide hover:underline" to={category.link} key={category.linkText}>
               {category.linkText.split(' ')[0]}

@@ -42,7 +42,7 @@ const ProductList = () => {
   }, [location, filterCount]);
 
   return (
-    <>
+    <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-3">
         <div className="flex | justify-between">
           <div className="flex gap-8">
@@ -62,7 +62,7 @@ const ProductList = () => {
         )}
       </div>
       <ProductGrid products={sortedFilteredProducts} />
-    </>
+    </div>
   );
 };
 

@@ -17,14 +17,14 @@ const ProductPage = () => {
   const cornerClass = randomCornerClass(pId);
 
   return (
-    <div className="container-fluid | my-32">
+    <div className="container-fluid | my-fl-400">
       <div className="grid grid-cols-6 sm:grid-cols-12 gap-x-10 gap-y-12">
-        <div className="col-span-6">
-          <img className={`hidden sm:block | rounded-${cornerClass}-[100px]`} width="632" height="811" src={imageUrl + imageOptions} />
+        <div className="col-span-6 | hidden sm:block">
+          <img className={`rounded-${cornerClass}-[100px]`} width="632" height="811" src={imageUrl + imageOptions} />
         </div>
 
-        <div className="col-span-6 xl:col-start-8 xl:col-span-5 | flex flex-col space-y-10">
-          <Breadcrumb />
+        <div className="col-span-6 xl:col-start-8 xl:col-span-5 | flex flex-col gap-y-10">
+          <Breadcrumb  className="hidden sm:flex" />
           <h1 className="font-serif font-normal text-800">{name}</h1>
           <img className={`block sm:hidden | rounded-${cornerClass}-[100px]`} width="632" height="811" src={imageUrl + imageOptions} />
           <div>{description}</div>
