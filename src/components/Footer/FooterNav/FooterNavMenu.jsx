@@ -8,7 +8,7 @@ const FooterNavMenu = ({ menu }) => {
         {menu.links.map((link) => {
           return (
             <li key={link.linkText}>
-              <Link className="hover:underline" to={link.link}>{link.linkText}</Link>
+              <Link className="hover:underline" to={link.link} onClick={window.scrollTo(0, 0)}>{link.linkText}</Link>
             </li>
           );
         })}
