@@ -18,11 +18,11 @@ const CartItem = (cartItem) => {
     <div className="flex | justify-between | w-full py-8 | border-t border-black border-opacity-10 | text-100 font-normal uppercase tracking-wide">
       <Link className="group" to={`/product/${id}`} onClick={closeMiniCart}>
         <div className="flex items-start | gap-4">
-          <div className={`rounded-${cornerClass}-[22px] overflow-hidden`}>
+          <div className={`flex-none rounded-${cornerClass}-[22px] overflow-hidden`}>
             <img
               className="group-hover:scale-105 transition-transform duration-300 ease-out"
-              width="80"
-              height="80"
+              width="65"
+              height="65"
               src={`${imageUrl}?fit=min&w=120&h=120&auto=format&q=75`}
             />
           </div>
