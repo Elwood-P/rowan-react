@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import Breadcrumb from '@/components/UI/Breadcrumb';
 import SingleProductForm from '@/components/Shop/ProductSingle/SingleProductForm';
@@ -12,6 +13,7 @@ const ProductPage = () => {
   const { pId } = useParams();
   const products = useSelector((state) => state.products);
   const product = products.find((product) => product.id === pId);
+  if (!product) return <Navigate to="/product-not-found" />;
   const { name, imageUrl, description, price, sale, salePrice } = product;
   const imageOptions = '?fit=min&w=632&h=811&auto=format&q=75';
   const cornerClass = randomCornerClass(pId);
@@ -24,7 +26,7 @@ const ProductPage = () => {
         </div>
 
         <div className="col-span-6 xl:col-start-8 xl:col-span-5 | flex flex-col gap-y-10">
-          <Breadcrumb  className="hidden sm:flex" />
+          <Breadcrumb className="hidden sm:flex" />
           <h1 className="font-serif font-normal text-800">{name}</h1>
           <img className={`block sm:hidden | rounded-${cornerClass}-[100px]`} width="632" height="811" src={imageUrl + imageOptions} />
           <div>{description}</div>
