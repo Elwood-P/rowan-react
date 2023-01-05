@@ -31,5 +31,3 @@ $ git push origin main
 
 ## Todo
 - [ ] Load product data from remote database
-
-[1]:	https://rowan-react.netlify.app
