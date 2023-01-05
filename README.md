@@ -1,6 +1,6 @@
 # Rowan - eCommerce Front End
 
-> Part of a series of projects to learn React. Complete front-end for an eCommerce site including design and implementation using React.
+> Part of a series of projects to learn React. Complete front-end for an eCommerce site including design and implementation using React.  
 > [View project live](https://rowan-react.netlify.app)
 
 ## Setup
