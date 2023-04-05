@@ -1,6 +1,6 @@
 # Rowan - eCommerce Front End
 
-> A React based project show casing a complete front-end design and implementation for an eCommerce site. One of several projects undertaken to expand my knowledge of React.
+> A React based project showcasing a complete front-end design and implementation for an eCommerce site. One of several projects undertaken to expand my knowledge of React.
 > [View project live](https://rowan-react.netlify.app)
 
 ## Key Features
