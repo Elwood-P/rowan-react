@@ -1,7 +1,5 @@
 # Rowan - eCommerce Front End
 
-![Rowan React - eCommerce Front End](https://kimba-imagecdn.imgix.net/elwoodp-dev/github-screenshots/rowan-react-screenshot.png?q=90&auto=format&width=768)
-
 > A React based project showcasing a complete front-end design and implementation for an eCommerce site. One of several projects undertaken to expand my knowledge of React.  
 > [View project live](https://rowan-react.netlify.app)
 
