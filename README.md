@@ -1,24 +1,15 @@
 # Rowan - eCommerce Front End
 
-> Part of a series of projects to learn React. Complete front-end for an eCommerce site including design and implementation using React.  
+> A React based project showcasing a complete front-end design and implementation for an eCommerce site. One of several projects undertaken to expand my knowledge of React.
 > [View project live](https://rowan-react.netlify.app)
 
-## Setup
-```shell
-# Run local server (Vite)
-$ npm run dev
-
-# Publish changes live to Netlify
-$ git push origin main
-```
-
-## Skills On Show
-- Cart state management using Redux and Redux Toolkit
-- Use of local storage to persist cart state using [custom middleware]() to integrate with Redux Tollkit
-- Product Filtering & Sorting with URL state management
-- Client Side Routing with React Router Dom
-- Responsive CSS using Tailwind and custom custom built [fluid properties]() using Sass mixins/functions
-- Continuous deployment to Netlify
+## Key Features
+-   Cart state management using Redux and Redux Toolkit
+-   Persisting cart state in Local Storage with custom middleware integration
+-   Advanced product filtering and sorting with URL state management
+-   Client-side routing using React Router DOM
+-   Responsive design using Tailwind CSS and custom fluid properties with Sass mixins/functions
+-   Continuous deployment through Netlify
 
 ## Technologies
 - React
@@ -28,6 +19,15 @@ $ git push origin main
 - Tailwind
 - Sass
 - Netlify
+
+## Setup
+```shell
+# Run local server (Vite)
+$ npm run dev
+
+# Publish changes live to Netlify
+$ git push origin main
+```
 
 ## Todo
 - [ ] Load product data from remote database
